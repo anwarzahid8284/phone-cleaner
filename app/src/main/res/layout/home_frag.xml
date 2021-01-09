@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/ramInformationID"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/average_sans"
+                android:text="@string/ram_information"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ramInformationLayoutId"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/layout_baground"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ramInformationID">
+                <ProgressBar
+                    android:id="@+id/ramProgressBarId"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:progress="0"
+                    android:layout_centerHorizontal="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progressDrawable="@drawable/custom_circular_progressbar" />
+                <TextView
+                    android:id="@+id/ramPerTextId"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintEnd_toEndOf="@id/ramProgressBarId"
+                    app:layout_constraintBottom_toBottomOf="@id/ramProgressBarId"
+                    app:layout_constraintStart_toStartOf="@id/ramProgressBarId"
+                    app:layout_constraintTop_toTopOf="@id/ramProgressBarId"
+                    android:text="0%"/>
+                <TextView
+                    android:id="@+id/ramUseTextId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/ram_used"
+                    android:textColor="@color/whiteColor"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/systemAndAppTextId"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/systemAndAppTextId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/system_and_apps"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintBottom_toTopOf="@id/availableRamTextId"
+                    app:layout_constraintStart_toStartOf="@id/ramUseTextId"
+                    app:layout_constraintTop_toBottomOf="@id/ramUseTextId" />
+
+                <TextView
+                    android:id="@+id/systemUsageId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/value2gb"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintStart_toEndOf="@id/systemAndAppTextId"
+                    app:layout_constraintTop_toTopOf="@id/systemAndAppTextId" />
+
+                <TextView
+                    android:id="@+id/availableRamTextId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/available_ram"
+                    app:layout_constraintBottom_toTopOf="@id/totalRamSpaceTextId"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintStart_toStartOf="@id/systemAndAppTextId"
+                    app:layout_constraintTop_toBottomOf="@id/systemAndAppTextId" />
+
+                <TextView
+                    android:id="@+id/availableRamID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/_3_0_gb"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintStart_toEndOf="@id/availableRamTextId"
+                    app:layout_constraintTop_toTopOf="@id/availableRamTextId" />
+
+                <TextView
+                    android:id="@+id/totalRamSpaceTextId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/total_ram_space"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintStart_toStartOf="@id/availableRamTextId"
+                    app:layout_constraintTop_toBottomOf="@id/availableRamTextId"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/totalRamId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/average_sans"
+                    android:text="@string/value4gb"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:textColor="@color/whiteColor"
+                    app:layout_constraintStart_toEndOf="@id/totalRamSpaceTextId"
+                    app:layout_constraintTop_toTopOf="@id/totalRamSpaceTextId" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/storageAndBatteryInfoTextId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                android:fontFamily="@font/average_sans"
+                android:text="@string/storage_and_battery_information"
+                app:layout_constraintStart_toStartOf="@id/ramInformationID"
+                app:layout_constraintTop_toBottomOf="@id/ramInformationLayoutId" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/storageAndBatteryLayoutId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/layout_baground"
+                app:layout_constraintStart_toStartOf="@id/ramInformationLayoutId"
+                app:layout_constraintTop_toBottomOf="@id/storageAndBatteryInfoTextId">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/batteryLayoutId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/layout_bg"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/batteryTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/battery"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/batteryProgressBarId"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressTint="@color/whiteColor"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        app:layout_constraintEnd_toStartOf="@id/batteryPercentageTextId"
+                        app:layout_constraintStart_toStartOf="@id/batteryTextId"
+                        app:layout_constraintTop_toBottomOf="@id/batteryTextId" />
+
+                    <TextView
+                        android:id="@+id/batteryPercentageTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:text="@string/percentage_45"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintBottom_toBottomOf="@id/batteryProgressBarId"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/batteryProgressBarId" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/layout_bg"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/batteryLayoutId"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/storageTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/storage"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/storageProgressBarId"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressTint="@color/whiteColor"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        app:layout_constraintEnd_toStartOf="@id/storagePercentageTextId"
+                        app:layout_constraintStart_toStartOf="@id/storageTextId"
+                        app:layout_constraintBottom_toTopOf="@id/totalStorageTextId"
+                        app:layout_constraintTop_toBottomOf="@id/storageTextId" />
+
+                    <TextView
+                        android:id="@+id/storagePercentageTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:text="@string/percentage_45"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintBottom_toBottomOf="@id/storageProgressBarId"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/storageProgressBarId" />
+
+                    <TextView
+                        android:id="@+id/totalStorageTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/totalStorageValueId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_32_0_gb"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintEnd_toStartOf="@id/free_storageID"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/totalStorageTextId" />
+
+                    <TextView
+                        android:id="@+id/free_storageID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/free"
+                        android:textColor="@color/whiteColor"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@id/totalStorageValueId"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/freeStorageValueId" />
+
+                    <TextView
+                        android:id="@+id/freeStorageValueId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_3_0_gb"
+                        android:textColor="@color/whiteColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/storageSettingId"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/storage_setting"
+                android:textColor="@color/whiteColor"
+                android:background="@drawable/button_bg"
+                app:layout_constraintStart_toStartOf="@id/storageAndBatteryLayoutId"
+                app:layout_constraintEnd_toEndOf="@id/storageAndBatteryLayoutId"
+                app:layout_constraintTop_toBottomOf="@id/storageAndBatteryLayoutId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/batteryInformationId"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/battery_information"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/whiteColor"
+                app:layout_constraintStart_toStartOf="@id/storageAndBatteryLayoutId"
+                app:layout_constraintEnd_toEndOf="@id/storageAndBatteryLayoutId"
+                app:layout_constraintTop_toBottomOf="@id/storageSettingId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gridLayoutId"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/storageAndBatteryLayoutId"
+                app:layout_constraintStart_toStartOf="@id/storageAndBatteryLayoutId"
+                app:layout_constraintTop_toBottomOf="@+id/batteryInformationId">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clearCacheId"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/videoImageViewId"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:src="@drawable/ic_mop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:id="@+id/videoSizeId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clean_cache"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/videoImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/videoImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/videoImageViewId" />
+
+                        <ImageView
+                            android:id="@+id/applicationImageViewId"
+                            android:src="@drawable/ic_appstore"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/appSizeId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/manage_apps"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/applicationImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/applicationImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/applicationImageViewId" />
+
+                        <ImageView
+                            android:id="@+id/repairImageViewId"
+                            android:layout_width="@dimen/_60sdp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@drawable/ic_admin"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            app:tint="@color/ic_color"
+                            android:layout_height="@dimen/_60sdp"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <TextView
+                            android:textSize="@dimen/_10ssp"
+                            android:id="@+id/repair_system_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/repair_system"
+                            app:layout_constraintEnd_toEndOf="@id/repairImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/repairImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/repairImageViewId" />
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:id="@+id/audioImageViewId"
+                            android:src="@drawable/ic_booster"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/appSizeId"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:id="@+id/audioSizeId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booster_ram"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/audioImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/audioImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/audioImageViewId" />
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:id="@+id/imageImageViewId"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:src="@drawable/ic_folder"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/appSizeId"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:id="@+id/imageSizeId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/empty_folder"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/imageImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/imageImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/imageImageViewId" />
+
+                        <ImageView
+
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:id="@+id/batterySaverImageViewId"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:src="@drawable/ic_battery"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/repair_system_id"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:id="@+id/battery_saver_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/battery_saver"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/batterySaverImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/batterySaverImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/batterySaverImageViewId" />
+                        <ImageView
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:id="@+id/wifiSpeedImageViewId"
+                            android:src="@drawable/ic_speedometer"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/audioSizeId"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:id="@+id/wifi_text_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/speed_test"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/wifiSpeedImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/wifiSpeedImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/wifiSpeedImageViewId" />
+                        <ImageView
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:id="@+id/hardwareTestImageViewId"
+                            android:src="@drawable/testing"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/imageSizeId"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:id="@+id/hardware_text_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hardware_testing"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/hardwareTestImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/hardwareTestImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/hardwareTestImageViewId" />
+                        <ImageView
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:id="@+id/memoryImageViewId"
+                            android:src="@drawable/ic_memory"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/battery_saver_id"
+                            app:tint="@color/ic_color" />
+
+                        <TextView
+                            android:id="@+id/memory_text_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/memory"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="@id/memoryImageViewId"
+                            app:layout_constraintStart_toStartOf="@id/memoryImageViewId"
+                            app:layout_constraintTop_toBottomOf="@id/memoryImageViewId" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

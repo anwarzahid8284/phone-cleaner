@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/randomMemory_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/button_bg"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ramImageViewId"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_ram"
+                app:tint="@color/ic_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ramTextViewId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/average_sans"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="Random Access Memory (RAM)"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/whiteColor"
+                app:layout_constraintStart_toEndOf="@id/ramImageViewId"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/usedMemoryId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="2.7 GB"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/ramProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/ramImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/ramTextViewId" />
+
+            <TextView
+                android:id="@+id/usedOfId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="Used of"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/ramProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/usedMemoryId"
+                app:layout_constraintTop_toBottomOf="@id/ramTextViewId" />
+
+            <TextView
+                android:id="@+id/totalMemoryId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="4.0 GB"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/ramProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/usedOfId"
+                app:layout_constraintTop_toBottomOf="@id/ramTextViewId" />
+
+            <ProgressBar
+                android:id="@+id/ramProgressBarId"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:max="100"
+                android:progress="100"
+                android:progressTint="@color/whiteColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ramImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/usedMemoryId" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/externalMemory_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomMemory_id">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg">
+
+            <ImageView
+                android:id="@+id/externalImageViewId"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_sdcard"
+                app:tint="@color/ic_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/externalTextViewId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="External Memory (SD Card)"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/whiteColor"
+                app:layout_constraintStart_toEndOf="@id/externalImageViewId"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/usedExternalId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="2.7 GB"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/whiteColor"
+                app:layout_constraintBottom_toTopOf="@id/externalProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/externalImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/externalTextViewId" />
+
+            <TextView
+                android:id="@+id/usedOfExternalId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="Used of"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/whiteColor"
+                app:layout_constraintBottom_toTopOf="@id/externalProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/usedExternalId"
+                app:layout_constraintTop_toBottomOf="@id/externalTextViewId" />
+
+            <TextView
+                android:id="@+id/totalExternalMemoryId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="4.0 GB"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/externalProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/usedOfExternalId"
+                app:layout_constraintTop_toBottomOf="@id/externalTextViewId" />
+
+            <ProgressBar
+                android:id="@+id/externalProgressBarId"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:max="100"
+                android:progress="100"
+                android:progressTint="@color/whiteColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/externalImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/usedExternalId" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/internalMemory_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/externalMemory_id">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            >
+
+            <ImageView
+                android:id="@+id/internalImageViewId"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_memory"
+                app:tint="@color/ic_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/internalTextViewId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="Local Storage"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/whiteColor"
+                app:layout_constraintStart_toEndOf="@id/internalImageViewId"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/usedInternalId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="2.7 GB"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/internalProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/internalImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/internalTextViewId" />
+
+            <TextView
+                android:id="@+id/usedOfInternalId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="Used of"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/internalProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/usedInternalId"
+                app:layout_constraintTop_toBottomOf="@id/internalTextViewId" />
+
+            <TextView
+                android:id="@+id/totalInternalMemoryId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="4.0 GB"
+                android:textColor="@color/whiteColor"
+                android:fontFamily="@font/average_sans"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toTopOf="@id/internalProgressBarId"
+                app:layout_constraintStart_toEndOf="@id/usedOfInternalId"
+                app:layout_constraintTop_toBottomOf="@id/internalTextViewId" />
+
+            <ProgressBar
+                android:id="@+id/internalProgressBarId"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:max="100"
+                android:progress="100"
+                android:progressTint="@color/whiteColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/internalImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/usedInternalId" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!--data-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="@dimen/_5sdp"
+        app:cardElevation="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/internalMemory_id">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clearCacheId"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/videoImageViewId"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/ic_video_camera"
+                app:layout_constraintEnd_toStartOf="@id/applicationImageViewId"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/ic_color" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:id="@+id/videoSizeId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video_size"
+                android:textSize="@dimen/_13ssp"
+
+                android:fontFamily="@font/average_sans"
+                app:layout_constraintEnd_toEndOf="@id/videoImageViewId"
+                app:layout_constraintStart_toStartOf="@id/videoImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/videoImageViewId" />
+
+            <ImageView
+                android:id="@+id/applicationImageViewId"
+                android:src="@drawable/ic_appstore"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintStart_toEndOf="@id/videoImageViewId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/appSizeId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/apps_size"
+                android:textSize="@dimen/_13ssp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/average_sans"
+                app:layout_constraintEnd_toEndOf="@id/applicationImageViewId"
+                app:layout_constraintStart_toStartOf="@id/applicationImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/applicationImageViewId" />
+
+
+            <ImageView
+                android:layout_marginTop="@dimen/_15sdp"
+                android:id="@+id/audioImageViewId"
+                android:src="@drawable/ic_voice"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/appSizeId"
+                app:tint="@color/ic_color" />
+
+            <TextView
+                android:id="@+id/audioSizeId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voice Size"
+                android:fontFamily="@font/average_sans"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="@id/audioImageViewId"
+                app:layout_constraintStart_toStartOf="@id/audioImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/audioImageViewId" />
+
+            <ImageView
+                android:layout_marginTop="@dimen/_15sdp"
+                android:id="@+id/imageImageViewId"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/ic_image"
+                app:layout_constraintStart_toEndOf="@id/audioImageViewId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appSizeId"
+                app:tint="@color/ic_color" />
+
+            <TextView
+                android:id="@+id/imageSizeId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image Size"
+                android:fontFamily="@font/average_sans"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="@id/imageImageViewId"
+                app:layout_constraintStart_toStartOf="@id/imageImageViewId"
+                app:layout_constraintTop_toBottomOf="@id/imageImageViewId" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Phone Repaire</string>
+    <string name="storage_and_battery_information">Storage and Battery Information</string>
+    <string name="free">Free :</string>
+    <string name="total">Total : </string>
+    <string name="percentage_45">0%</string>
+    <string name="storage">Storage</string>
+    <string name="battery">Battery</string>
+    <string name="value4gb">4.0 GB</string>
+    <string name="total_ram_space">Total RAM Space :</string>
+    <string name="value3gb">3.0 GB</string>
+    <string name="available_ram">Available RAM :</string>
+    <string name="value2gb">2.0 GB</string>
+    <string name="system_and_apps">System And Apps :</string>
+    <string name="ram_used">RAM USED</string>
+    <string name="ram_information">RAM information</string>
+    <string name="_32_0_gb"> 32 GB</string>
+    <string name="_3_0_gb"> 3 GB</string>
+    <string name="clean_cache">Clean Cache</string>
+    <string name="manage_apps">Manage Apps</string>
+    <string name="repair_system">Repair System</string>
+    <string name="booster_ram">Booster RAM</string>
+    <string name="battery_saver">Battery Saver</string>
+    <string name="storage_setting">Storage Setting</string>
+    <string name="battery_information">Battery Information</string>
+    <string name="more_option">More Option</string>
+
+
+    <string name="battery_plugged">Plugged</string>
+    <string name="battery_wireless">Power source is wireless</string>
+    <string name="battery_usbsource">Power source is a USB port</string>
+    <string name="battery_acsource">Power source is an AC charger</string>
+    <string name="battery_charge">Charge Plugin</string>
+    <string name="battery_discharging">Discharging</string>
+    <string name="battery_batteryFull">Battery Full</string>
+    <string name="battery_notCharging">Not Charging</string>
+    <string name="battery_unknown">Unknown</string>
+    <string name="empty_folder">Empty Folder</string>
+    <string name="speed_test">Speed Test</string>
+    <string name="hardware_testing">Hardware Testing</string>
+    <string name="memory">Memory</string>
+    <string name="video_size">Video Size</string>
+    <string name="apps_size">Apps Size</string>
+</resources>
